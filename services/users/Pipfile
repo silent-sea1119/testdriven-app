@@ -12,6 +12,8 @@ gunicorn = "==19.8.1"
 
 [dev-packages]
 python-dotenv = "*"
+coverage = "==4.5.1"
+"flake8" = "==3.5.0"
 
 [requires]
 python_version = "3.6"

@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 RUN pip install --no-cache-dir --trusted-host pypi.python.org pipenv
 COPY Pipfile /usr/src/app/Pipfile
 COPY Pipfile.lock /usr/src/app/Pipfile.lock
-RUN pipenv install --system --deploy
+RUN pipenv install --system --deploy --dev
 
 COPY ./entrypoint.sh /usr/src/app/entrypoint.sh
 RUN chmod +x /usr/src/app/entrypoint.sh
