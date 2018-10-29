@@ -3,3 +3,4 @@
 **/.flaskenv
 .mypy_cache
 htmlcov
+.vscode
