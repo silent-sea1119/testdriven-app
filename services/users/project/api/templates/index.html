@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flask on Docker</title>
+    <!-- meta -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styles -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    {% block css %}
+    {% endblock css %}
+</head>
+
+<body>
+    <div class="container">
+        <div class="column is-one-third">
+            <br>
+            <h1 class="title">All Users</h1>
+            <hr><br>
+            <form action="/" method="POST">
+                <div class="field">
+                    <input name="username" type="text" class="input" placeholder="Enter a username" required>
+                </div>
+                <div class="field">
+                    <input name="email" type="email" class="input" placeholder="Enter an email address" required>
+                </div>
+                <input type="submit" class="button is-primary is-fullwidth" value="Submit">
+            </form>
+            <br>
+            <hr>
+            {% if users %}
+            <ol>
+                {% for user in users %}
+                <li>{{user.username}}</li>
+                {% endfor %}
+            </ol>
+            {% else %}
+            <p>No users!</p>
+            {% endif %}
+        </div>
+    </div>
+    </script>
+    {% block js %}
+    {% endblock js %}
+</body>
+
+</html>
