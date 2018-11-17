@@ -7,12 +7,7 @@ from project import create_app, db
 from project.api.models import User
 
 COV = coverage.coverage(
-    branch=True,
-    include='project/*',
-    omit=[
-        'project/tests/*',
-        'project/config.py'
-    ]
+    branch=True, include="project/*", omit=["project/tests/*", "project/config.py"]
 )
 COV.start()
 
@@ -29,7 +24,7 @@ def recreate_db():
 
 @cli.command()
 def test():
-    tests = unittest.TestLoader().discover('project/tests', pattern='test*.py')
+    tests = unittest.TestLoader().discover("project/tests", pattern="test*.py")
     result = unittest.TextTestRunner(verbosity=2).run(tests)
     if result.wasSuccessful():
         return 0
@@ -38,19 +33,19 @@ def test():
 
 @cli.command()
 def seed_db():
-    db.session.add(User('michael', 'hermanmu@gmail.com'))
-    db.session.add(User('michaelherman', 'michael@mherman.org'))
+    db.session.add(User("michael", "hermanmu@gmail.com"))
+    db.session.add(User("michaelherman", "michael@mherman.org"))
     db.session.commit()
 
 
 @cli.command()
 def cov():
-    tests = unittest.TestLoader().discover('project/tests')
+    tests = unittest.TestLoader().discover("project/tests")
     result = unittest.TextTestRunner(verbosity=2).run(tests)
     if result.wasSuccessful():
         COV.stop()
         COV.save()
-        print('Coverage Summary:')
+        print("Coverage Summary:")
         COV.report()
         COV.html_report()
         COV.erase()

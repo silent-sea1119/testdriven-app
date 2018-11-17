@@ -4,7 +4,7 @@ from project import db
 
 
 class User(db.Model):  # type: ignore
-    __tablename__ = 'users'
+    __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(128), nullable=False)
@@ -18,8 +18,8 @@ class User(db.Model):  # type: ignore
 
     def to_json(self):
         return {
-            'if': self.id,
-            'username': self.username,
-            'email': self.email,
-            'active': self.active
+            "id": self.id,
+            "username": self.username,
+            "email": self.email,
+            "active": self.active,
         }

@@ -9,6 +9,8 @@ flask = "==1.0.2"
 "psycopg2" = "==2.7.4"
 flask-testing = "==0.6.2"
 gunicorn = "==19.8.1"
+flask-debugtoolbar = "==0.10.1"
+flask-cors = "==3.0.6"
 
 [dev-packages]
 python-dotenv = "*"
