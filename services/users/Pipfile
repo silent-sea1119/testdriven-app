@@ -11,10 +11,10 @@ flask-testing = "==0.6.2"
 gunicorn = "==19.8.1"
 flask-debugtoolbar = "==0.10.1"
 flask-cors = "==3.0.6"
+coverage = "==4.5.1"
 
 [dev-packages]
 python-dotenv = "*"
-coverage = "==4.5.1"
 "flake8" = "==3.5.0"
 
 [requires]

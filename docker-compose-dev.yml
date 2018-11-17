@@ -1,4 +1,4 @@
-version: '3.6'
+version: "3.6"
 
 services:
   users:
@@ -6,7 +6,7 @@ services:
       context: ./services/users
       dockerfile: Dockerfile-dev
     volumes:
-      - './services/users:/usr/src/app'
+      - "./services/users:/usr/src/app"
     ports:
       - 5001:5000
     environment:
@@ -26,7 +26,22 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-  
+
+  client:
+    build:
+      context: ./services/client
+      dockerfile: Dockerfile-dev
+    volumes:
+      - "./services/client:/usr/src/app"
+      - "/usr/src/app/node_modules"
+    ports:
+      - 3007:3000
+    environment:
+      - NODE_ENV=development
+      - REACT_APP_USERS_SERVICE_URL=${REACT_APP_USERS_SERVICE_URL}
+    depends_on:
+      - users
+
   nginx:
     build:
       context: ./services/nginx
@@ -36,3 +51,4 @@ services:
       - 80:80
     depends_on:
       - users
+      - client
