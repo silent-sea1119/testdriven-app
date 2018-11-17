@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddUser renders a snapshot properly 1`] = `
+<form>
+  <div
+    className="field"
+  >
+    <input
+      className="input is-large"
+      name="username"
+      placeholder="Enter a username"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="field"
+  >
+    <input
+      className="input is-large"
+      name="email"
+      placeholder="Enter an email address"
+      required={true}
+      type="email"
+    />
+  </div>
+  <div
+    className="field"
+  >
+    <input
+      className="button is-primary is-fullwidth is-large"
+      type="submit"
+      value="Submit"
+    />
+  </div>
+</form>
+`;
