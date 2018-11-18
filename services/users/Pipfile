@@ -12,6 +12,7 @@ gunicorn = "==19.8.1"
 flask-debugtoolbar = "==0.10.1"
 flask-cors = "==3.0.6"
 coverage = "==4.5.1"
+flask-migrate = "==2.2.0"
 
 [dev-packages]
 python-dotenv = "*"
